@@ -1,0 +1,111 @@
+#  Exercicio 2
+
+class Usuario {
+    constructor(nome, idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+}
+
+const usuarios = [
+    new Usuario('João', 20),
+    new Usuario('Maria', 25),
+    new Usuario('Pedro', 18),
+    new Usuario('Ana', 30)
+];
+
+const nomesEmMaiusculas = usuarios.map(usuario => usuario.nome.toUpperCase());
+console.log(nomesEmMaiusculas);
+
+for (let i = 0; i <= 100; i++) {
+    if (i % 2 !== 0) {
+        console.log(i);
+    }
+}
+
+const usuariosMaioresDeIdade = usuarios.filter(usuario => usuario.idade > 18);
+console.log(usuariosMaioresDeIdade);
+
+const usuarioEntre25e30 = usuarios.find(usuario => usuario.idade >= 25 && usuario.idade <= 30);
+console.log(usuarioEntre25e30);
+
+const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const numerosParesDobro = numeros.filter(numero => numero % 2 === 0).map(numero => numero * 2);
+console.log(numerosParesDobro);
+
+class Animal {
+    emitirSom() {}
+    correr() {}
+}
+
+class Cachorro extends Animal {
+    emitirSom() {
+        console.log('Au Au');
+    }
+}
+
+class Gato extends Animal {
+    emitirSom() {
+        console.log('Miau');
+    }
+}
+
+class Livro {
+    constructor(titulo, paginas) {
+        this.titulo = titulo;
+        this.paginas = paginas;
+    }
+}
+
+const livros = [
+    new Livro('Livro 1', 200),
+    new Livro('Livro 2', 400),
+    new Livro('Livro 3', 250),
+    new Livro('Livro 4', 500)
+];
+const livrosComMaisDe300Paginas = livros.filter(livro => livro.paginas > 300);
+console.log(livrosComMaisDe300Paginas);
+
+class Carro {
+    constructor(marca, ano) {
+        this.marca = marca;
+        this.ano = ano;
+    }
+}
+
+const carros = [
+    new Carro('Toyota', 2008),
+    new Carro('Honda', 2015),
+    new Carro('Toyota', 2020),
+    new Carro('Ford', 2012)
+];
+const primeiroToyotaFabricadoDepoisDe2010 = carros.find(carro => carro.marca === 'Toyota' && carro.ano > 2010);
+console.log(primeiroToyotaFabricadoDepoisDe2010);
+
+class Produto {
+    constructor(nome, preco) {
+        this.nome = nome;
+        this.preco = preco;
+    }
+}
+
+const produtos = [
+    new Produto('Produto 1', 50),
+    new Produto('Produto 2', 120),
+    new Produto('Produto 3', 80),
+    new Produto('Produto 4', 200)
+];
+const produtosComPrecoAumentado = produtos.map(produto => {
+    produto.preco *= 1.1;
+    return produto;
+});
+console.log(produtosComPrecoAumentado);
+
+const produtoCaro = produtos.find(produto => produto.preco > 100);
+if (produtoCaro) {
+    produtoCaro.nome = 'Produto Caro';
+}
+console.log(produtos);
+
+const numerosDivisiveisPor3 = numeros.filter(numero => numero % 3 === 0).map(numero => numero ** 2);
+console.log(numerosDivisiveisPor3);
