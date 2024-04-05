@@ -1,0 +1,98 @@
+# Exercicio 4 Html
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos e Inscrição</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .curso {
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        .formulario {
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        select {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        input[type="submit"] {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cursos disponíveis</h1>
+        <div class="curso">
+            <h2>Nome do Curso</h2>
+            <p>Descrição do curso...</p>
+            <p>Turno/Horário: Segunda a sexta, 18:00 - 20:00</p>
+            <p>Professores: Nome do Professor 1, Nome do Professor 2</p>
+            <p>Valor: R$ 200,00</p>
+            <a href="inscricao.html?codigo_curso=123">Inscreva-se</a>
+        </div>
+        <div class="formulario">
+            <h2>Formulário de Inscrição</h2>
+            <form action="api-endpoint" method="POST" id="form-inscricao">
+                <label for="nome_aluno">Nome do Aluno *</label>
+                <input type="text" id="nome_aluno" name="nome_aluno" required>
+                <input type="submit" value="Enviar Inscrição">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('form-inscricao').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var formData = new FormData(this);
+
+            fetch('api-endpoint', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao enviar dados do formulário');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                alert('Inscrição realizada com sucesso!');
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Ocorreu um erro ao enviar os dados do formulário. Por favor, tente novamente.');
+            });
+        });
+    </script>
+</body>
+</html>
