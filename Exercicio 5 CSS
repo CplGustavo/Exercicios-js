@@ -1,0 +1,160 @@
+## Script 1
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout Responsivo</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+
+    .sidebar {
+      float: left;
+      width: 20%;
+      height: 100%;
+      background-color: #333;
+      color: #fff;
+    }
+
+    .main-content {
+      float: right;
+      width: 80%;
+      height: 100%;
+      background-color: #f0f0f0;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 10px;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .sidebar, .main-content {
+        width: 100%;
+        float: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <ul>
+      <li><a href="#">Pagina Inicial</a></li>
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  </div>
+  <div class="Seja bem-vindo ao nosso site">
+    <h1>Seja bem-vindo ao nosso site</h1>
+    <p>This is the main content area.</p>
+  </div>
+</body>
+</html>
+
+
+
+
+
+## Script 2
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layout Fixo</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    #menu-superior {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    #menu-lateral {
+        position: fixed;
+        top: 40px;
+        left: 0;
+        width: 200px;
+        height: 100%;
+        background-color: #555;
+        color: #fff;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    #conteudo {
+        margin-left: 220px; /* largura do menu lateral + espaço */
+        padding: 20px;
+    }
+    #rodape {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+</style>
+</head>
+<body>
+
+<div id="menu-superior">
+    <h2>Menu Superior</h2>
+    <ul>
+        <li><a href="#">Página Inicial</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Contato</a></li>
+    </ul>
+</div>
+
+<div id="menu-lateral">
+    <h2>Menu Lateral</h2>
+    <ul>
+        <li><a href="#">Menu 1</a></li>
+        <li><a href="#">Menu 2</a></li>
+        <li><a href="#">Menu 3</a></li>
+    </ul>
+</div>
+
+<div id="conteudo">
+    <h1>Conteúdo</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec elit ac massa placerat venenatis. Nulla facilisi. Aliquam lobortis velit in nisi ultrices aliquet. Duis at fermentum odio. Nullam vel scelerisque dolor. Mauris tempus turpis in justo lobortis, sit amet luctus ex fermentum. Integer eleifend laoreet leo, nec dictum lacus scelerisque et. Sed id massa nec nunc tristique luctus.</p>
+</div>
+
+<div id="rodape">
+    <p>Rodapé - © 2024</p>
+</div>
+
+</body>
+</html>
+
+
+
+
